@@ -1,0 +1,29 @@
+[versions]
+kotlin = "2.2.20"
+kotlinx-datetime = "0.7.1"
+clikt = "5.0.3"
+mockk = "1.14.6"
+kotest = "6.0.4"
+shadow = "9.2.2"
+dokka = "1.9.20"
+ktlint-gradle = "13.1.0"
+ktlintEngine = "1.7.1"
+detekt = "1.23.7"
+
+[libraries]
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+
+[bundles]
+implementation = ["kotlinx-datetime", "clikt"]
+test-implementation = ["mockk", "kotest-runner-junit5", "kotest-assertions-core"]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
